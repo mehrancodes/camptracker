@@ -1,0 +1,47 @@
+.tw-btn {
+    @apply tw-py-2 tw-px-4 tw-shadow-sm tw-transition-100 tw-transition-linear tw-transition-bg tw-rounded
+}
+
+.tw-btn.tw-btn-primary {
+    @apply tw-bg-indigo-500 tw-text-white
+}
+
+.tw-btn.tw-btn-primary-outline {
+    @apply tw-bg-transparent tw-text-blue-700 tw-border tw-border-blue-500
+}
+
+.tw-btn.tw-btn-primary-outline:hover {
+    @apply tw-bg-indigo-500 tw-text-white tw-border-transparent
+}
+
+.tw-btn.tw-btn-primary:hover {
+    @apply tw-bg-indigo-700 tw-text-white
+}
+
+.tw-btn.tw-btn-primary:focus {
+    @apply tw-outline-none
+}
+
+.tw-btn.tw-btn-primary:disabled {
+    @apply tw-bg-indigo-200 tw-shadow-none tw-cursor-default
+}
+
+.tw-btn.tw-btn-default {
+    @apply tw-bg-white tw-border tw-border-gray-300 tw-text-gray-800
+}
+
+.tw-btn.tw-btn-default.active {
+    @apply tw-bg-gray-200 tw-border-gray-400
+}
+
+.tw-btn.tw-btn-default:hover {
+    @apply tw-bg-gray-200 tw-border-gray-400
+}
+
+.tw-btn.tw-btn-default:focus {
+    @apply tw-outline-none
+}
+
+.tw-btn.tw-btn-default:disabled {
+    @apply tw-bg-gray-400 tw-shadow-none tw-cursor-default
+}

@@ -1,0 +1,39 @@
+[v-cloak] {
+    @apply hidden
+}
+
+/**
+Modal custom styles
+ */
+.modal-open {
+    @apply tw-overflow-hidden
+}
+
+.modal-backdrop {
+    @apply tw-bg-gray-900 tw-fixed tw-h-full tw-left-0 tw-top-0 tw-w-full tw-z-1040
+}
+
+.modal-backdrop.fade {
+    @apply tw-opacity-0
+}
+
+.modal-backdrop.show {
+    @apply tw-opacity-50
+}
+
+/**
+Light Pick custom styles
+ */
+.lightpick {
+    @apply tw-z-10 !important
+}
+
+@screen lg {
+    .lightpick {
+        @apply tw-w-full !important
+    }
+
+    .lightpick__month {
+        @apply tw-w-full !important
+    }
+}

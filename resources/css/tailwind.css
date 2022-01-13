@@ -1,0 +1,11 @@
+@tailwind base;
+
+@tailwind components;
+
+@import "misc.css";
+@import "buttons.css";
+@import "markdown.css";
+
+@tailwind utilities;
+
+@import '~sweetalert/dist/sweetalert.css';

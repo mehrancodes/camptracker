@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    @include('analytics')
+
+    <!-- Meta Information -->
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ mix('css/tailwind.css') }}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+    <!-- Scripts -->
+    @stack('scripts')
+
+    <!-- Global Spark Object -->
+    <script>
+        window.Spark = <?php echo json_encode(array_merge(Spark::scriptVariables(), [])); ?>;
+    </script>
+</head>
+<body class="tw-bg-gray-100 tw-h-screen tw-antialiased">
+    <div id="spark-app" v-cloak>
+
+        <!-- Navigation -->
+        @if (Auth::check())
+            @include('spark::nav.user')
+        @else
+            @include('spark::nav.guest')
+        @endif
+
+        <main class="tw-pb-10">
+            @yield('content')
+        </main>
+
+        <flash :data="{{ json_encode(session('flash')) }}"></flash>
+
+        <!-- Application Level Modals -->
+        @if (Auth::check())
+            @include('spark::modals.notifications')
+            @include('spark::modals.support')
+            @include('spark::modals.session-expired')
+        @endif
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="/js/sweetalert.min.js"></script>
+</body>
+</html>
