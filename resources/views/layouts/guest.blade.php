@@ -75,7 +75,7 @@
 
             <!-- Copyright -->
             <div class="tw-mt-4 tw-mb-20">
-                Copyright ©2019 Camp Tracker. All rights reserved. <a href="mailto:support@camptraker.com"><u>Contact us</u></a>.
+                Copyright ©2022 Camp Tracker. All rights reserved. <a href="mailto:support@camptraker.com"><u>Contact us</u></a>.
             </div>
         </div>
     </div>
